@@ -1,6 +1,7 @@
 // app/product/[id].tsx
 import React from "react";
 import { Product } from "../../types/Product";
+import Image from "next/image";
 
 // Simulating fetching data
 const fetchProductById = async (id: number): Promise<Product | null> => {
@@ -21,7 +22,7 @@ export default async function ProductDetailPage({ params }: { params: { id: numb
   return (
     <div>
       <h1>{product.name}</h1>
-      <img src={product.image} alt={product.name} />
+      <Image src={product.image} alt={product.name} />
       <p>{product.description}</p>
       <p>${product.price}</p>
     </div>
